@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Premium Task Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>TaskFlow</h1>
+            <p>Empower your productivity with style</p>
+        </header>
+
+        <main>
+            <section class="add-task-section">
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="What needs to be done?" required autocomplete="off">
+                    <button type="submit" id="add-btn">Add Task</button>
+                </form>
+            </section>
+
+            <section class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </section>
+
+            <section class="task-list-container">
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Fetching tasks...</p>
+                </div>
+                <div id="error-message" class="hidden">
+                    <p>Something went wrong. Please try again.</p>
+                </div>
+                <div id="empty-state" class="hidden">
+                    <div class="empty-icon">📝</div>
+                    <p>No tasks found. Time to start something new!</p>
+                </div>
+                <ul id="task-list"></ul>
+            </section>
+        </main>
+
+        <footer>
+            <div class="stats">
+                <span id="items-left">0 items left</span>
+            </div>
+            <button id="clear-completed" class="hidden">Clear Completed</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
